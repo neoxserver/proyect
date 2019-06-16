@@ -1,0 +1,86 @@
+while true
+do
+ clear
+ echo "		Comandos Basicos"
+ echo ""
+ echo "1)  Comando  ls"
+ echo "2)  Comando  pwd"
+ echo "3)  Comando  cat"
+ echo "4)  Comando  cd"
+ echo "5)  Comando  cal"
+ echo "6)  Comando  man"
+ echo "7)  Comando  who"
+ echo "8)  Comando  chdir"
+ echo "9)  Comando  su"
+ echo "10) Comando  less"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando ls"
+     ls
+     read;;
+
+  2) clear 
+     echo "Comando pwd"
+     pwd
+     read;;
+
+  3) clear 
+     echo "Comando cat"
+     echo "Archivo:  [ruta]"
+     read arch
+     cat $arch
+     read;;
+
+  4) clear 
+     echo "Comando cd"
+     echo "Ruta:"
+     read ruta
+     cd $ruta
+     ls
+     read;;
+
+  5) clear 
+     echo "Comando cal"
+     cal
+     read;;
+
+  6) clear 
+     echo "Comando man"
+     echo "Nombre del comando:"
+     read coman
+     man $coman
+     read;;
+
+  7) clear 
+     echo "Comando who"
+     who
+     read;;
+
+  8) clear 
+     echo "Comando chdir" 
+     echo "Ruta:"
+     read ruta
+     chdir $ruta
+     ls
+     read;;
+
+  9) clear 
+     echo "Comando su"
+     su
+     read;;
+
+  10) clear 
+     echo "Comando less"
+     echo "Archivo:"
+     read ruta
+     less $ruta
+     read;;
+
+  11)exit 0;;  
+ esac
+done

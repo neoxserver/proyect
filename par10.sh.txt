@@ -1,0 +1,74 @@
+while true
+do
+ clear
+ echo "		Geston de particiones "
+ echo ""
+ echo "1)  Comando  fdisk"
+ echo "2)  Comando  cfdisk"
+ echo "3)  Comando  sfdisk"
+ echo "4)  Comando  lsblk"
+ echo "5)  Comando  parted "
+ echo "6)  Comando  hwinfo"
+ echo "7)  Comando  blkid"
+ echo "8)  Comando  pydf"
+ echo "9)  Comando  df"
+ echo "10) Comando  lsscsi"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando fdisk "
+     fdisk
+     read;;
+
+  2) clear 
+     echo "Comando cfdisk"
+     cfdisk
+     read;;
+
+  3) clear 
+     echo "Comando sfdisk"
+     sfdisk
+     read;;
+
+  4) clear 
+     echo "Comando lslk"
+     lslk
+     read;;
+
+  5) clear 
+     echo "Comando parted"
+     sudo parted
+     read;;
+
+  6) clear 
+     echo "Comando winfo"
+     winfo
+     read;;
+
+  7) clear 
+     echo "Comando blkid"
+     blkid --help
+     read;;
+
+  8) clear 
+     echo "Comando pydf"
+     pydf
+     read;;
+
+  9) clear 
+     echo "Comando df"
+     df
+     read;;
+
+  10) clear
+     echo "Comando lsscsi" 
+     lsscsi
+     read;;
+
+  11)exit 0;;  
+ esac
+done

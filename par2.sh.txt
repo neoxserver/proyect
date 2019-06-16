@@ -1,0 +1,100 @@
+while true
+do
+ clear
+ echo "		Manejo de archivos y directorios."
+ echo ""
+ echo "1)  Comando  ls -l"
+ echo "2)  Comando  ls -a"
+ echo "3)  Comando  tree"
+ echo "4)  Comando  mkdir"
+ echo "5)  Comando  rm -rf"
+ echo "6)  Comando  touch"
+ echo "7)  Comando  rm -f"
+ echo "8)  Comando  mv (Cambio de Nombre)"
+ echo "9)  Comando  cp"
+ echo "10) Comando  ln"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comado ls -l"
+     ls -l
+     read;;
+
+  2) clear 
+     echo "Comado ls -a"
+     ls -a
+     read;;
+
+  3) clear 
+     echo "Comado tree"
+     tree
+     read;;
+
+  4) clear 
+     echo "Comado mkdir"
+     echo "Nombre del directorio a crear:"
+     read dire
+     mkdir $dire
+     echo "Directorio creado!"
+     read;;
+
+  5) clear 
+     echo "Coamndo rm -rf"
+     echo "Nombre del directorio a eliminar:"
+     read dire
+     rm -rf $dire
+     echo "Directorio Eliminado"
+     read;;
+
+  6) clear 
+     echo "Comando touch"
+     echo "Nombre del archivo a crear:"
+     read arch
+     touch $arch
+     echo "Archivo creado."
+     read;;
+
+  7) clear
+     echo "Comando rm -f" 
+     echo "Nombre del archivo a elimiar:"
+     read arch
+     rm -f $arch
+     echo "Archivo eliminado."
+     read;;
+
+  8) clear 
+     echo "Comando mv (cambio de nombre)"
+     echo "Nombre del archivo/directorio:"
+     read actual
+     echo "Nombre nuevo:"
+     read neu
+     mv $actual $neu
+     echo "Archivo actualizado."
+     read;;
+
+  9) clear 
+     echo "Comando cp"
+     echo "Nombre del archivo a copiar:"
+     read act
+     echo "Rututa de llegada del archivo copiado:"
+     read ruta
+     cp $act $ruta
+     echo "Arcivo copiado correctamente a $ruta"
+     read;;
+
+  10) clear 
+     echo "Comando ln"
+     echo "Nombre del archivo:"
+     read arch
+     echo "Nombre del acceso directo:"
+     read acc
+     ln $arch $acc
+     echo ""
+     read;;
+  11)exit 0;;  
+ esac
+done

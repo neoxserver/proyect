@@ -1,0 +1,76 @@
+while true
+do
+ clear
+ echo "		Informacion del Sistema"
+ echo ""
+ echo "1)  Comando  arch"
+ echo "2)  Comando  uname -m"
+ echo "3)  Comando  hdparm -tT(Disco Duro)"
+ echo "4)  Comando  cat (CPU)"
+ echo "5)  Comando  cat (Interrupciones)"
+ echo "6)  Comando  cat (Memoria)"
+ echo "7)  Comando  cat (Ficheros swap)"
+ echo "8)  Comando  cat (Sistema de fichero)"
+ echo "9)  Comando  date"
+ echo "10) Comando  cal"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando arch"
+     arch
+     read;;
+
+  2) clear 
+     echo "Comando uname -m"
+     uname -m
+     read;;
+
+  3) clear 
+     echo "Comando hdparm -tT"
+     hdparm -tT /dev/sda
+     read;;
+
+  4) clear 
+     echo "Comando cat /proc/cpuinfo"
+     cat /proc/cpuinfo
+     read;;
+
+  5) clear 
+     echo "Comando cat /proc/interrupts"
+     cat /proc/interrupts
+     read;;
+
+  6) clear 
+     echo "Comando cat /proc/meminfo"
+     cat /proc/meminfo
+     read;;
+
+  7) clear 
+     echo "Comando cat /proc/swaps"
+     cat /proc/swaps
+     read;;
+
+  8) clear 
+     echo "Comando cat /proc/mounts"
+     cat /proc/mounts
+     read;;
+
+  9) clear 
+     echo "Comando date"
+     date
+     read;;
+
+  10) clear 
+     echo "Comando cal"
+     echo "Fecha:  mm aa"
+     read fec
+     cal $fec
+     read;;
+
+  11)exit 0;;  
+ esac
+done

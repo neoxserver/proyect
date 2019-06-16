@@ -1,0 +1,77 @@
+while true
+do
+ clear
+ echo "		Monitoreo"
+ echo ""
+ echo "1)  Comando  top"
+ echo "2)  Comando  ps -eafw"
+ echo "3)  Comando  ps -A"
+ echo "4)  Comando  pstree"
+ echo "5)  Comando  kill -9"
+ echo "6)  Comando  lsof -p"
+ echo "7)  Comando  strace -c ls"
+ echo "8)  Comando  watch -n1 'cat/proc/interrupts'"
+ echo "9)  Comando  last reboot"
+ echo "10) Comando  smartctl -A /dev/hda"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando top"
+     top
+     read;;
+
+  2) clear 
+     echo "Comando ps -eafw"
+     ps -eafw
+     read;;
+
+  3) clear 
+     echo "Comando ps -A"
+     ps -A
+     read;;
+
+  4) clear 
+     echo "Comando pstree"
+     pstree
+     read;;
+
+  5) clear 
+     echo "Comando kill -9"
+     echo "ID del proceso:"
+     read idd
+     kill -9 $idd
+     echo "Proceso terminado"
+     read;;
+
+  6) clear 
+     echo "Comando lsof -p"
+     lsof -p $$
+     read;;
+
+  7) clear 
+     echo "Comando trace -c ls>/dev/null"
+     strace -c ls > /dev/null
+     read;;
+
+  8) clear 
+     echo "Comando watch -n1 'cat/proc/interrupts'"
+     watch -n1 'cat/proc/interrupts'     
+     read;;
+
+  9) clear 
+     echo "Comando last reboot"
+     last reboot
+     read;;
+
+  10) clear 
+     echo "Comando smartctl -A "
+     smartctl -A
+     read;;
+
+  11)exit 0;;  
+ esac
+done

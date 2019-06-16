@@ -1,0 +1,74 @@
+while true
+do
+ clear
+ echo "		Informacion del hardware del equipo"
+ echo ""
+ echo "1)  Comando  dmidecode -s system-manufacturer"
+ echo "2)  Comando  dmidecode -s system-product-name"
+ echo "3)  Comando  dmidecode -s system-version"
+ echo "4)  Comando  uname -m"
+ echo "5)  Comando  acpi -bi"
+ echo "6)  Comando  uname -sr"
+ echo "7)  Comando  lspci"
+ echo "8)  Comando  lsusb"
+ echo "9)  Comando  lshw -short"
+ echo "10) Comando  lshw | less"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear
+     echo "Comando dmidecode -s system-manufacturer" 
+     sudo dmidecode -s system-manufacturer
+     read;;
+
+  2) clear 
+     echo "Comando dmidecode -s system-product-name" 
+     sudo dmidecode -s system-product-name
+     read;;
+
+  3) clear 
+     echo "Comando dmidecode -s system-version" 
+     sudo dmidecode -s system-version
+     read;;
+
+  4) clear 
+     echo "Comando uname -m"
+     uname -m 
+     read;;
+
+  5) clear 
+     echo "Comando acpi -bi" 
+     acpi -bi
+     read;;
+
+  6) clear 
+     echo "Comando uname -sr" 
+     uname -sr
+     read;;
+
+  7) clear 
+     echo "Comando lspci" 
+     lspci
+     read;;
+
+  8) clear 
+     echo "Comando lsusb" 
+     lsusb
+     read;;
+
+  9) clear 
+     echo "Comando lshw -short" 
+     lshw -short
+     read;;
+
+  10) clear 
+     echo "Comando lshw | less" 
+     lshw | less
+     read;;
+
+  11)exit 0;;  
+ esac
+done

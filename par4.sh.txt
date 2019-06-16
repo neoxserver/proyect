@@ -1,0 +1,98 @@
+while true
+do
+ clear
+ echo "		Informacion de los usuarios y grupos"
+ echo ""
+ echo "1)  Comando  groupadd"
+ echo "2)  Comando  groupdel"
+ echo "3)  Comando  groupmod -n"
+ echo "4)  Comando  useradd"
+ echo "5)  Comando  userdel"
+ echo "6)  Comando  passwd"
+ echo "7)  Comando  passwd(Solo root)"
+ echo "8)  Comando  change -E"
+ echo "9)  Comando  pwck"
+ echo "10) Comando  grpck"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando groupadd"
+     echo "Nombre del nuevo grupo:"
+     read grN
+     groupadd $grN
+     echo "Grupo creado."
+     read;;
+
+  2) clear 
+     echo "Comando groupdel"
+     echo "Nombre del grupo a eliminar:"
+     read grN
+     groupdel $grN
+     echo "Grupo eliminado."
+     read;;
+
+  3) clear 
+     echo "Comando groupmod -n"
+     echo "Nombre del grupo:"
+     read gr
+     echo "Nombre nuevo del grupo:"
+     read grN
+     groupmod -n $gr $grN
+     echo "Grupo actualizado."
+     read;;
+
+  4) clear 
+     echo "Comando useradd"
+     echo "Nombre del nuevo usuario:"
+     read usN
+     useradd $usN
+     echo "Usuario creado"
+     read;;
+
+  5) clear 
+     echo "Comando userdel"
+     echo "Nombre del usuario a eliminar:"
+     read usN
+     userdel -r $usN
+     echo "Usuario eliminado"
+     read;;
+
+  6) clear 
+     echo "Comando passwd"
+     passwd
+     read;;
+
+  7) clear 
+     echo "Comando passwd(Root)"
+     echo "Nombre del usuario:"
+     read usN
+     passwd $usN
+     read;;
+
+  8) clear 
+     echo "change -E"
+     echo "Nombre del usuario:"
+     read usN
+     echo "Fecha de expiracion de contraseña: aa-mm-dd"
+     read fecha
+     change -E $fecha $usN
+     echo "Se ha completado"
+     read;;
+
+  9) clear 
+     echo "Comando pwck"
+     pwck
+     read;;
+
+  10) clear 
+     echo "Comando grpck"
+     grpck
+     read;;
+
+  11)exit 0;;  
+ esac
+done

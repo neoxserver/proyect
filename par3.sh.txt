@@ -1,0 +1,52 @@
+while true
+do
+ clear
+ echo "			Espacio en disco"
+ echo ""
+ echo "1)  Comando  df -h"
+ echo "2)  Comando  ls -lSr"
+ echo "3)  Comando  du -sh"
+ echo "4)  Comando  du -a"
+ echo "5)  Comando  rpm -q -a"
+ echo "6)  Comando  dpkg-query -W"
+ echo "7)  Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando df -h"
+     df -h
+     read;;
+
+  2) clear
+     echo "Coamndo ls -lSr"
+     ls -lSr 
+     read;;
+
+  3) clear 
+     echo "Comando du -sh"
+     echo "Nombre del directorio a escanear(ruta):"
+     read ruta
+     du -sh $ruta
+     read;;
+
+  4) clear 
+     echo "Comando du -a"
+     du -a
+     read;;
+
+  5) clear
+     echo "Comando rpm -q -a"
+     rpm -q -a 
+     read;;
+
+  6) clear 
+     echo "Comando dpkg-query -W"
+     dpkg-query -W
+     read;;
+
+  7)exit 0;;  
+ esac
+done

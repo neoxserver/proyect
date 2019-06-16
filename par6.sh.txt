@@ -1,0 +1,58 @@
+while true
+do
+ clear
+ echo "		Gestion de procesos"
+ echo ""
+ echo "1)  Comando  top"
+ echo "2)  Comando  ps"
+ echo "3)  Comando  pstree"
+ echo "4)  Comando  kill"
+ echo "5)  Comando  pgrep"
+ echo "6)  Comando  renice"
+ echo "7) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando top"
+     top
+     read;;
+
+  2) clear 
+     echo "Comando ps"
+     ps
+     read;;
+
+  3) clear 
+     echo "Comando pstree"
+     pstree
+     read;;
+
+  4) clear 
+     echo "Comando kill"
+     echo "Id del procesos a parar:"
+     read idd
+     kill $idd
+     echo "Procesos parado"
+     read;;
+
+  5) clear
+     echo "Comando pgrep" 
+     echo "Nombre del proceso:"
+     read proc
+     pgrep $proc
+     read;;
+
+  6) clear 
+     echo "Comando renice"
+     echo "Id del proceso:"
+     read idd
+     echo "Prioridad del proceso:  (-19 màs alta) (19 màs baja)"
+     read prio
+     renice $prio -p $idd
+     read;;
+  7)exit 0;;  
+ esac
+done

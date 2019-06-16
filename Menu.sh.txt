@@ -1,0 +1,27 @@
+while true
+do
+ clear
+ echo "			Menu de comandos."
+ echo ""
+ echo "1)  Comandos bàsicos"
+ echo "2)  Manejo de archivos y directorios"
+ echo "3)  Espacio en disco"
+ echo "4)  Informaciòn de los usuarios y grupos"
+ echo "5)  Informacion del sistema"
+ echo "6)  Gestion de procesos"
+ echo "7)  Informaciòn del hardware del equipo"
+ echo "8)  Infromacion de la red"
+ echo "9)  Monitoreo"
+ echo "10) Gestion de particiones"
+ echo "11) Apagar el quipo"
+ echo "12) Salir"
+ echo ""
+ echo "Elige una opcion: "
+ read op
+ 
+ case $op in
+  12) echo "Adios !!!"
+      exit 0;; 
+  *) ./par$op.sh;;
+  esac
+done

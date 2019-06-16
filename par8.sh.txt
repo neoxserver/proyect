@@ -1,0 +1,87 @@
+while true
+do
+ clear
+ echo "		-"
+ echo ""
+ echo "1)  Comando  ifconfig"
+ echo "2)  Comando  ifcongig (Configurar)"
+ echo "3)  Comando  route -n"
+ echo "4)  Comando  hostname"
+ echo "5)  Comando  host"
+ echo "6)  Comando  ip link show"
+ echo "7)  Comando  mii-tool"
+ echo "8)  Comando  tcpdump tcp port 80"
+ echo "9)  Comando  iwlist scan"
+ echo "10) Comando  whois"
+ echo "11) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando ifconfig"
+     ifconfig
+     read;;
+
+  2) clear 
+     echo "Comando ifconfig (Configurar)"
+     echo "Nombre de la red:"
+     read red
+     echo "Puerto ipv4:"
+     read ipv
+     echo "Mascara de red:"
+     read masc
+     ifconfig $red $ipv netmask $masc
+     echo "Red configurada"
+     read;;
+
+  3) clear 
+     echo "Comando route -n"
+     route -n
+     read;;
+
+  4) clear 
+     echo "Comando hostname"
+     hostname
+     read;;
+
+  5) clear 
+     echo "Comando host"
+     echo "URL:"
+     read url
+     host $url
+     read;;
+
+  6) clear 
+     echo "Comando ip link show"
+     ip link show
+     read;;
+
+  7) clear 
+     echo "Comando mii-tool"
+     echo "Nombre de la red:"
+     read red
+     mii-tool $red
+     read;;
+
+  8) clear 
+     echo "Comando tcpdump tcp port 80"
+     tcpdump tcp port 80
+     read;;
+
+  9) clear 
+     echo "Comando iwlist scan"
+     iwlist scan
+     read;;
+
+  10) clear 
+     echo "Comando whois"
+     echo "Url:"
+     read url
+     whois $url
+     read;;
+
+  11)exit 0;;  
+ esac
+done

@@ -1,0 +1,70 @@
+while true
+do
+ clear
+ echo "		Apagar el equipo"
+ echo ""
+ echo "1)  Comando  shutdown -h now"
+ echo "2)  Comando  init 0"
+ echo "3)  Comando  telinit 0"
+ echo "4)  Comando  halt"
+ echo "5)  Comando  shutdown -h"
+ echo "6)  Comando  showtdown -c"
+ echo "7)  Comando  shutdown -r now"
+ echo "8)  Comando  reboot"
+ echo "9)  Comando  logout"
+ echo "10) Volver al menu principal"
+ echo ""
+ echo "Elija una opcion:"
+ read op
+
+ case $op in
+  1) clear 
+     echo "Comando shutdown -h now"
+     sudo shutdown -h now
+     read;;
+
+  2) clear
+     echo "Comando init 0" 
+     sudo init 0
+     read;;
+
+  3) clear 
+     echo "telinit 0"
+     sudo telinit 0
+     read;;
+
+  4) clear 
+     echo "Comando halt"
+     sudo halt
+     read;;
+
+  5) clear 
+     echo "Comando sutdown -h"
+     echo "Tiempo de apagado hh:mm"
+     read time
+     sudo shutdown -h $time
+     read;;
+
+  6) clear 
+     echo "Comando shutdown -c"
+     sudo shutdown -c
+     read;;
+
+  7) clear 
+     echo "Comando shutdown -r now"
+     sudo shutdown -r now
+     read;;
+
+  8) clear 
+     echo "Comando reboot"
+     sudo reboot
+     read;;
+
+  9) clear 
+     echo "Comando logout"
+     sudo logout
+     read;;
+
+  10)exit 0;;  
+ esac
+done
